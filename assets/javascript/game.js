@@ -26,17 +26,13 @@ for (var i = 0; i < letters.length ; i++) {
 };
 
 
-function startOver() {
-        guessesLeftLog = 10;
-    };
-
-
 
 document.onkeyup = function(event) {
     console.log(guessesFarLog);
     var guessesFartext = document.getElementById('guessesFarLog');
     guessesFartext.textContent = guessesFartext.textContent + ' ' + event.key;
     if (guessesFartext === answer) {
+        wins++;
         win();
     } else if (guessesLeftLog - 1 === 0) {
         lost ();
