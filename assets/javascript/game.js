@@ -4,25 +4,30 @@ var guessesLeftLog = 0;
 var guessesFarLog = [];
 var letters = ["a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z"]
 var lettersLength = letters.length; 
-var answer = [];
+var answer = 0;
 
 
 //.push adds something to the end of the array
 function updateDom() {
-var winstext = document.getElementById('wins-text');
-var lossestext = document.getElementById('losses-text');
+var winstext = document.getElementById('winsLog');
+var lossestext = document.getElementById('lossesLog');
 var guessesLefttext = document.getElementById('guessesLeftLog');
 var guessesFartext = document.getElementById('guessesFarLog');
-}
+winstext.innerHTML = winsLog ;
+lossestext.innerHTML = losesLog ; 
+guessesLefttext.innerHTML = guessesLeftLog ;
+guessesFartext.innerHTML = guessesFarLog.join(',') ;
+};
 
 function startOver() {
     guessesLeftLog = 10;
-}
+    console.log('The answer is ' + answer[i] + '.' );
+    for (var i = 0; i < letters.length; i++) {
+        var answer = letters[Math.floor(Math.random() * lettersLength)];}
+};
 
 
-for (var i=0; i < length; i++) {
-    var answer = letters[Math.floor(Math.random() * lettersLength)];
-}
+
 
 
 document.onkeyup = function(event) {
@@ -49,5 +54,3 @@ document.onkeyup = function(event) {
 //document.getElementById("guesses").innerHTML = guesses
 
 //document.getElementById("guessesFar").innerHTML = guessesFar
-
- 
