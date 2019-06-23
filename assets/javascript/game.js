@@ -2,7 +2,7 @@ var wins = 0;
 var losses = 0;
 var guessesLeftLog = 0;
 var guessesFarLog = [];
-var letters = ["a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z"]
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_" ];
 var lettersLength = letters.length; 
 var answer = 0;
 
@@ -19,14 +19,13 @@ guessesLefttext.innerHTML = guessesLeftLog ;
 guessesFartext.innerHTML = guessesFarLog.join(',') ;
 };
 
+for (var i = 0; i < letters.length ; i++) {
+    var answer = letters[Math.floor(Math.random() * lettersLength)];}
+console.log('The answer is ' + answer [i] + '.' );
+
 function startOver() {
     guessesLeftLog = 10;
-    console.log('The answer is ' + answer[i] + '.' );
-    for (var i = 0; i < letters.length; i++) {
-        var answer = letters[Math.floor(Math.random() * lettersLength)];}
 };
-
-
 
 
 
