@@ -4,7 +4,7 @@ var guessesLeftLog = 0;
 var guessesFarLog = [];
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_" ];
 var lettersLength = letters.length; 
-var answer = 0;
+var answer = [];
 
 
 //.push adds something to the end of the array
@@ -19,29 +19,32 @@ guessesLefttext.innerHTML = guessesLeftLog ;
 guessesFartext.innerHTML = guessesFarLog.join(',') ;
 };
 
+
 for (var i = 0; i < letters.length ; i++) {
-    var answer = letters[Math.floor(Math.random() * lettersLength)];}
-console.log('The answer is ' + answer [i] + '.' );
+    var answer = letters[Math.floor(Math.random(i) * letters.length)];
+    console.log('The answer is ' + answer [i] + '.' )
+};
+
 
 function startOver() {
-    guessesLeftLog = 10;
-};
+        guessesLeftLog = 10;
+    };
 
 
 
 document.onkeyup = function(event) {
     console.log(guessesFarLog);
     var guessesFartext = document.getElementById('guessesFarLog');
-    guessesFartext.textContent = event.key;
+    guessesFartext.textContent = guessesFartext.textContent + ' ' + event.key;
     if (guessesFartext === answer) {
         win();
-    } else if (guessesLeftLog - 1 == 0) {
+    } else if (guessesLeftLog - 1 === 0) {
         lost ();
     } 
     else {
        fail(guessesFarText);
     }
-}
+};
 
 
 
