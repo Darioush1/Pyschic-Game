@@ -1,48 +1,61 @@
-var wins = 0;
-var losses = 0;
-var guessesLeftLog = 0;
+var winsLog = 0;
+var lossesLog = 0;
+var guessesLeftLog = 10;
 var guessesFarLog = [];
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_" ];
 var lettersLength = letters.length; 
-var answer = [];
+var startOver = function () {
+    guessesLeftLog = 10;
+    guessesFarLog = [];
+    guessesFartext ();
+    letters ();
+    guessesLefttext ();
+}
+
 
 
 //.push adds something to the end of the array
-function updateDom() {
+
 var winstext = document.getElementById('winsLog');
 var lossestext = document.getElementById('lossesLog');
-var guessesLefttext = document.getElementById('guessesLeftLog');
-var guessesFartext = document.getElementById('guessesFarLog');
-winstext.innerHTML = winsLog ;
-lossestext.innerHTML = losesLog ; 
+var guessesLefttext = document.querySelector('#guessesLeftLog');
+var guessesFartext = document.querySelector('#guessesFarLog');
+winstext.innerHTML = document.querySelector('#winsLog') ;
+lossestext.innerHTML = document.querySelector('#lossesLog'); 
 guessesLefttext.innerHTML = guessesLeftLog ;
-guessesFartext.innerHTML = guessesFarLog.join(',') ;
-};
 
 
 for (var i = 0; i < letters.length ; i++) {
-    var answer = letters[Math.floor(Math.random(i) * letters.length)];
-    console.log('The answer is ' + answer [i] + '.' )
+    var letters = letters[Math.floor(Math.random(i) * letters.length)];
+    console.log('The answer is ' + letters [i] + '.' )
 };
 
 
 
 document.onkeyup = function(event) {
     console.log(guessesFarLog);
+    guessesLeftLog--;
     var guessesFartext = document.getElementById('guessesFarLog');
     guessesFartext.textContent = guessesFartext.textContent + ' ' + event.key;
-    if (guessesFartext === answer) {
-        wins++;
-        win();
-    } else if (guessesLeftLog - 1 === 0) {
-        lost ();
-    } 
-    else {
-       fail(guessesFarText);
+    
+    if (guessesFartext === letters) {
+        winsLog++;
+        document.querySelector('#winsLog');
+        startOver ();
+    };
+    
+    if (guessesLeftLog === 0) {
+        lossestext++;
+
     }
-};
+}; 
 
-
+function startOver() {
+    guessesLefttext = 0;
+    guessesFartext -1;
+    guessesFartext [" "];
+}
+;
 
 //function updateDom() { 
 //document.getElementById("wins").innerHTML = wins 
