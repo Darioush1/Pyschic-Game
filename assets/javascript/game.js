@@ -10,11 +10,8 @@ var startOver = function () {
     guessesFartext ();
     letters ();
     guessesLefttext ();
-}
+};
 
-
-
-//.push adds something to the end of the array
 
 var winstext = document.getElementById('winsLog');
 var lossestext = document.getElementById('lossesLog');
@@ -34,7 +31,9 @@ for (var i = 0; i < letters.length ; i++) {
 
 document.onkeyup = function(event) {
     console.log(guessesFarLog);
+   
     guessesLeftLog--;
+    
     var guessesFartext = document.getElementById('guessesFarLog');
     guessesFartext.textContent = guessesFartext.textContent + ' ' + event.key;
     
