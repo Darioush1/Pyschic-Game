@@ -2,7 +2,7 @@ var winsLog = 0;
 var lossesLog = 0;
 var guessesLeftLog = 10;
 var guessesFarLog = [];
-var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_" ];
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var lettersLength = letters.length; 
 var startOver = function () {
     guessesLeftLog = 10;
@@ -20,26 +20,20 @@ var guessesFartext = document.querySelector('#guessesFarLog');
 winstext.innerHTML = document.querySelector('#winsLog') ;
 lossestext.innerHTML = document.querySelector('#lossesLog'); 
 guessesLefttext.innerHTML = guessesLeftLog ;
+var compChoice = letters[Math.floor(Math.random() * letters.length)]
 
-
-for (var i = 0; i < letters.length ; i++) {
-    var letters = letters[Math.floor(Math.random(i) * letters.length)];
-    console.log('The answer is ' + letters [i] + '.' )
-};
-
+console.log('The answer is ' + compChoice + '.' )
 
 
 document.onkeyup = function(event) {
     console.log(guessesFarLog);
-   
     guessesLeftLog--;
-    
     var guessesFartext = document.getElementById('guessesFarLog');
     guessesFartext.textContent = guessesFartext.textContent + ' ' + event.key;
-    
-    if (guessesFartext === letters) {
+    console.log(letters)
+    if (guessesFartext === compChoice) {
         winsLog++;
-        document.querySelector('#winsLog');
+        document.getElementById("winsLog").textContent = winsLog;
         startOver ();
     };
     
