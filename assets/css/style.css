@@ -1,5 +1,5 @@
 body {
-    background-color: #aliceblue;
+    background-color: aliceblue;
     color: aliceblue;
 }
 
@@ -20,10 +20,12 @@ body {
 
 .textBox{
     background-color: #64485C ;
-    width: 10rem 10rem;
+    width: 7rem;
+    height: 10rem;
     padding: 10px 5px;
     margin: 10px 5px;
     text-align: center;
     font-family: 'Roboto' ;
     position: relative;
+    float: left;
 }

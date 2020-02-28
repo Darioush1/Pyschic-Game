@@ -1,12 +1,13 @@
 var wins = 0;
 var losses = 0;
-var guessesLeftLog = 11;
+var life = 11;
 var guessesFarLog = [];
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var lettersLength = letters.length;
 
+
 var startOver = function () {
-    guessesLeftLog = 11;
+    life = 11;
     guessesFarLog = [''];
     guessesText.textContent =['']
     compChoiceFunction();
@@ -14,8 +15,9 @@ var startOver = function () {
 
 
 
-var guessesLeftText = 
-    document.querySelector("#guessesLeftHtml").innerHTML = guessesLeftLog;
+
+
+
 
 
 
@@ -29,31 +31,30 @@ var compChoiceFunction = function () {
 };
 
 console.log('The answer is ' + compChoiceText + '.');
-console.log(guessesLeftLog)
+console.log(life)
 
 document.onkeyup = function (event) {
-    guessesLeftText--;
-    guessesLeftLog--;
-    guessesLeftLog.textContent = guessesLeftText
+    life--;
+    document.querySelector("#guessesLeftHtml").innerHTML = life;
     guessesText.textContent = guessesText.textContent + ' ' + event.key;
+    
 
     if (event.key === compChoiceText) {
         wins++;
         document.querySelector("#wins").textContent = wins;
         startOver();
-        guessesLeftLog = 11;
         guessesFarLog = [''];
         compChoiceFunction();
     };
+    
 
-    if (guessesLeftText === 0) {
+    if (life === 0) {
         losses++;
         document.querySelector('#losses').textContent = losses;
         startOver();
     };
 
     console.log(guessesText);
-    startOver();
 };
 
 
