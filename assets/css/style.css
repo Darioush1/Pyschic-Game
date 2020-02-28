@@ -1,0 +1,29 @@
+body {
+    background-color: #aliceblue;
+    color: aliceblue;
+}
+
+.header{
+    background-color: #2E1114;
+    font-family: 'Merienda' ;
+    font-size: 50px;
+    /* padding: #501B1D 1rem; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 6rem;
+    border-bottom: #adadad;
+}
+
+.textBox{
+    background-color: #64485C ;
+    width: 10rem 10rem;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    text-align: center;
+    font-family: 'Roboto' ;
+    position: relative;
+}

@@ -4,32 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Psychic Game</title>
 </head>
 <body>
-    <h1>Pyschic Game</h1>
-</body>
+
+    <div class="header">
+    Pyschic Game
+    </div>
+
 <hr>
 
-<p class="directions">
+<div class = "textBox">
+    Guesses Left: <span  id="guessesLeftHtml">0</span>
+</div>
+
+<div class = "textBox">
+    Guesses so far: <span id="guessesFarLog"></span>
+</div>
+
+
+<div class="directions">
     Guess the letter!
-</p>
+</div>
 
-<p>
+<div class = "textBox">
     Wins: <span id="wins">0</span>
-</p>
+</div>
 
-<p>
+<div class = "textBox">
     Losses: <span id="losses">0</span>
-</p>
-<p>
-    Guesses Left: <span id="guessesLeftHtml"></span>
-</p>
-<p>
-    Guesses so far: <span id="guessesFarLog"> </span>
-</p>
+</div>
+
+<button id="playAgainButton">Play Again?</button>
+<button id="startOverButton">Start Over?</button>
 
 
+</body>
 <script src="./assets/javascript/game.js"></script>
 </html>

@@ -8,6 +8,7 @@ var lettersLength = letters.length;
 var startOver = function () {
     guessesLeftLog = 11;
     guessesFarLog = [''];
+    guessesText.textContent =['']
     compChoiceFunction();
 }
 
@@ -32,6 +33,7 @@ console.log(guessesLeftLog)
 
 document.onkeyup = function (event) {
     guessesLeftText--;
+    guessesLeftLog--;
     guessesLeftLog.textContent = guessesLeftText
     guessesText.textContent = guessesText.textContent + ' ' + event.key;
 
