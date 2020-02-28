@@ -14,17 +14,7 @@ var startOver = function () {
 }
 
 
-
-
-
-
-
-
-
 var guessesText = document.querySelector('#guessesFarLog');
-//winstext.innerHTML = document.querySelector('#winsLog');
-//lossestext.innerHTML = document.querySelector('#lossesLog');
-
 var compChoiceText = letters[Math.floor(Math.random() * letters.length)];
 var compChoiceFunction = function () {
     compChoiceText;
@@ -38,7 +28,6 @@ document.onkeyup = function (event) {
     document.querySelector("#guessesLeftHtml").innerHTML = life;
     guessesText.textContent = guessesText.textContent + ' ' + event.key;
     
-
     if (event.key === compChoiceText) {
         wins++;
         document.querySelector("#wins").textContent = wins;
@@ -46,7 +35,6 @@ document.onkeyup = function (event) {
         guessesFarLog = [''];
         compChoiceFunction();
     };
-    
 
     if (life === 0) {
         losses++;
@@ -56,13 +44,3 @@ document.onkeyup = function (event) {
 
     console.log(guessesText);
 };
-
-
-//function updateDom() { 
-//document.getElementById("wins").innerHTML = wins 
-
-//document.getElementById("losses").innerHTML = losses
-
-//document.getElementById("guesses").innerHTML = guesses
-
-//document.getElementById("guessesFar").innerHTML = guessesFar
